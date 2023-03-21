@@ -14,16 +14,18 @@ public class FileLoadingTests
         var byteArray = File.ReadAllBytes("examples/corrupted.tvg");
 
         var exception = Assert.Throws<Exception>(() => { TvgLoad.FromByteArray(byteArray); });
-        Assert.That(exception.Message, Contains.Substring("not a valid TinyVg document"));
+        Assert.That(exception.Message, Contains.Substring("Not a valid TinyVg document"));
     }
 
     [Test]
     public void can_load_a_file_from_byte_array()
     {
-        var byteArray = File.ReadAllBytes("examples/everything-1.tvg");
+        var byteArray = File.ReadAllBytes("examples/everything-1.tvg"); //400 x 768
         
         var document = TvgLoad.FromByteArray(byteArray);
         
         Assert.That(document, Is.Not.Null);
+        Assert.That(document.Height, Is.EqualTo(768), "height");
+        Assert.That(document.Width, Is.EqualTo(400), "width");
     }
 }

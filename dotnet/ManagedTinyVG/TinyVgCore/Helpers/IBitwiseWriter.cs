@@ -1,4 +1,4 @@
-namespace TinyVgCore;
+namespace TinyVgCore.Helpers;
 
 /// <summary>
 /// Writes bits and bytes to an output

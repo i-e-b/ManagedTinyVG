@@ -28,4 +28,16 @@ public class FileLoadingTests
         Assert.That(document.Height, Is.EqualTo(768), "height");
         Assert.That(document.Width, Is.EqualTo(400), "width");
     }
+    
+    [Test]
+    public void can_load_a_file_from_a_file_stream()
+    {
+        using var fs = File.Open("examples/everything-1.tvg", FileMode.Open); //400 x 768
+        
+        var document = TvgLoad.FromStream(fs);
+        
+        Assert.That(document, Is.Not.Null);
+        Assert.That(document.Height, Is.EqualTo(768), "height");
+        Assert.That(document.Width, Is.EqualTo(400), "width");
+    }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TinyVgCore;
+namespace TinyVgCore.Helpers;
 
 /// <summary>
 /// A bitwise wrapper around a byte stream. Also provides run-out

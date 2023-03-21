@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using TinyVgCore.BasicTypes;
+using TinyVgCore.DrawCommands;
 
 namespace TinyVgCore
 {
@@ -9,12 +11,14 @@ namespace TinyVgCore
     public class TvgDocument
     {
         private readonly List<TvgColor> _colorTable;
+        private readonly List<TvgCommand> _drawCommands;
 
         /// <summary>
         /// Create a new blank document
         /// </summary>
         public TvgDocument()
         {
+            _drawCommands = new();
             _colorTable = new List<TvgColor>();
         }
 
@@ -67,6 +71,14 @@ namespace TinyVgCore
         {
             if (index >= (ulong)_colorTable.Count) throw new Exception($"{nameof(SetColor)} called on index outside of color palette");
             _colorTable[(int)index] = color;
+        }
+
+        /// <summary>
+        /// Add a command to the drawing list
+        /// </summary>
+        public void AddCommand(TvgCommand tvgCommand)
+        {
+            _drawCommands.Add(tvgCommand);
         }
     }
 

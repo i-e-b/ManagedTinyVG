@@ -1,4 +1,4 @@
-﻿namespace TinyVgCore;
+﻿namespace TinyVgCore.Helpers;
 
 /// <summary>
 /// Read bits and bytes from a stream or enumerator

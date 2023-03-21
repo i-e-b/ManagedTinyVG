@@ -1,4 +1,4 @@
-namespace TinyVgCore;
+namespace TinyVgCore.BasicTypes;
 
 /// <summary>
 /// Defines the type of color information that is used in the color table

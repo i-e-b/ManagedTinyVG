@@ -1,4 +1,4 @@
-namespace TinyVgCore;
+namespace TinyVgCore.BasicTypes;
 
 /// <summary>
 /// The coordinate range defines how many bits a Unit value uses
